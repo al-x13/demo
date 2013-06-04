@@ -11,4 +11,9 @@ class ApplicationController < ActionController::Base
       cart
     end
 
+    def user_access_counter
+      session[:counter] ||= 0
+      session[:counter] += 1
+    end
+
 end

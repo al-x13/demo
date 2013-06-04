@@ -127,6 +127,14 @@
     text-align: center;
 }
 
+#counter {
+    background: #9c9;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    float: right;
+    font-size: 25px;
+}
+
 #banner img { float: left;
 }
 

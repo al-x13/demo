@@ -49,8 +49,7 @@ class LineItemsController < ApplicationController
 
         session[:counter] = 0
 
-        format.html { redirect_to(@line_item.cart,
-          :notice => 'Line item was successfully created.') }
+        format.html { redirect_to(@line_item.cart) }
         format.json { render json: @line_item,
            status: :created, location: @line_item }
 
@@ -61,7 +60,6 @@ class LineItemsController < ApplicationController
       end
 
     end
-
   end
 
   # PUT /line_items/1

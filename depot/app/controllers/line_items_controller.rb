@@ -42,15 +42,14 @@ class LineItemsController < ApplicationController
   def create
     @cart = current_cart
     product = Product.find(params[:product_id])
-    @line_item = @cart.add_product(product.id)
+    @line_item = @cart.add_product(product.id, product.price)
 
     respond_to do |format|
       if @line_item.save
 
         session[:counter] = 0
 
-        format.html { redirect_to(@line_item.cart,
-          :notice => 'Line item was successfully created.') }
+        format.html { redirect_to(@line_item.cart, notice: "#{product.title} was successfully added to cart") }
         format.json { render json: @line_item,
            status: :created, location: @line_item }
 
@@ -61,7 +60,6 @@ class LineItemsController < ApplicationController
       end
 
     end
-
   end
 
   # PUT /line_items/1

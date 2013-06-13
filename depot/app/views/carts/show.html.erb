@@ -4,7 +4,9 @@
 
 <table>
 
-  <% @cart.line_items.each do |item| %>
+  <%= render @cart %>
+
+  <!-- <% @cart.line_items.each do |item| %>
       <tr>
 
         <td> <%= item.product.title %> </td>
@@ -15,7 +17,7 @@
 
       </tr>
 
-  <% end %>
+  <% end %> -->
 
   <tr class="total_line">
 

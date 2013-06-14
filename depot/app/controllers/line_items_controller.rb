@@ -49,6 +49,7 @@ class LineItemsController < ApplicationController
 
         session[:counter] = 0
 
+        format.js { @current_item = @line_item }
         format.html { redirect_to(store_url, notice: "#{product.title} was successfully added to cart") }
         format.json { render json: @line_item,
            status: :created, location: @line_item }
